@@ -7,10 +7,9 @@ class Transaction(Base, SerializerMixin):
 
     id = sa.Column(sa.Integer, primary_key=True, autoincrement=True, index=True)
     amount = sa.Column(sa.Integer, nullable=False)
-    # currency = None
     datetime = sa.Column(sa.DateTime, nullable=False)
+    card_id = sa.Column(sa.Integer, sa.ForeignKey('cards.id'), nullable=False)
+    merchant_id = sa.Column(sa.Integer, sa.ForeignKey('merchants.id'), nullable=False)
 
     card = orm.relation('Card')
     merchant = orm.relation('Merchant')
-
-

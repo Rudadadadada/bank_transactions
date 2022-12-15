@@ -11,15 +11,3 @@ class Card(Base, SerializerMixin):
 
     account = orm.relation('Account')
     transactions = orm.relation('Transaction', back_populates='card')
-
-    @staticmethod
-    def get_card(session, client_id=None, account_id=None):
-        cards = []
-        if client_id:
-            account_select_condition = f' and account_id = {account_id}' if account_id else ''
-            cards = list(
-                session.execute(f'select cards.id, card_number from "cards" join "accounts" on cards.account_id '
-                                f'= accounts.id where accounts.client_id = {client_id}' + account_select_condition))
-        else:
-            cards = list(session.execute(f'select cards.id, card_number from "cards" where account_id = {account_id})'))
-        return cards

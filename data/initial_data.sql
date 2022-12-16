@@ -14,20 +14,20 @@ INSERT INTO public."clients" ("id", "surname", "name") VALUES (2, 'Kuybida', 'Vs
 INSERT INTO public."clients" ("id", "surname", "name") VALUES (3, 'Rudakov', 'Nikita');
 
 --accounts
-INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (1, '40817810800038292000', 1);
-INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (2, '40817810800038292001', 1);
-INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (3, '40817810800038292002', 2);
-INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (4, '40817810800038292003', 2);
-INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (5, '40817810800038292004', 3);
-INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (6, '40817810800038292005', 3);
+INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (1, '4081 7810 8000 3829 2000', 1);
+INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (2, '4081 7810 8000 3829 2001', 1);
+INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (3, '4081 7810 8000 3829 2002', 2);
+INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (4, '4081 7810 8000 3829 2003', 2);
+INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (5, '4081 7810 8000 3829 2004', 3);
+INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (6, '4081 7810 8000 3829 2005', 3);
 
 --cards
-INSERT INTO public."cards" ("id", "number", "account_id") VALUES (1, '1234567891234500', 1);
-INSERT INTO public."cards" ("id", "number", "account_id") VALUES (2, '1234567891234501', 2);
-INSERT INTO public."cards" ("id", "number", "account_id") VALUES (3, '1234567891234502', 3);
-INSERT INTO public."cards" ("id", "number", "account_id") VALUES (4, '1234567891234503', 4);
-INSERT INTO public."cards" ("id", "number", "account_id") VALUES (5, '1234567891234504', 5);
-INSERT INTO public."cards" ("id", "number", "account_id") VALUES (6, '1234567891234505', 6);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (1, '1234 5678 9123 4500', 1);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (2, '1234 5678 9123 4501', 2);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (3, '1234 5678 9123 4502', 3);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (4, '1234 5678 9123 4503', 4);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (5, '1234 5678 9123 4504', 5);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (6, '1234 5678 9123 4505', 6);
 
 --mccs
 INSERT INTO public."mccs" ("id", "type", "code") VALUES (1, 'Products', 5411);

@@ -1,3 +1,4 @@
+# Imports involved in all models.
 import sqlalchemy as sa
 import sqlalchemy.orm as orm
 from sqlalchemy_serializer import SerializerMixin

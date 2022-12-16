@@ -1,3 +1,5 @@
+--Debugging data to filee the database.
+
 DELETE FROM public."transactions";
 DELETE FROM public."merchants";
 DELETE FROM public."mccs";

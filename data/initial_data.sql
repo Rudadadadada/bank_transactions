@@ -20,41 +20,41 @@ INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (5, '4081781080
 INSERT INTO public."accounts" ("id", "name", "client_id") VALUES (6, '40817810800038292005', 3);
 
 --cards
-INSERT INTO public."cards" ("id", "card_number", "account_id") VALUES (1, '1234567891234500', 1);
-INSERT INTO public."cards" ("id", "card_number", "account_id") VALUES (2, '1234567891234501', 2);
-INSERT INTO public."cards" ("id", "card_number", "account_id") VALUES (3, '1234567891234502', 3);
-INSERT INTO public."cards" ("id", "card_number", "account_id") VALUES (4, '1234567891234503', 4);
-INSERT INTO public."cards" ("id", "card_number", "account_id") VALUES (5, '1234567891234504', 5);
-INSERT INTO public."cards" ("id", "card_number", "account_id") VALUES (6, '1234567891234505', 6);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (1, '1234567891234500', 1);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (2, '1234567891234501', 2);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (3, '1234567891234502', 3);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (4, '1234567891234503', 4);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (5, '1234567891234504', 5);
+INSERT INTO public."cards" ("id", "number", "account_id") VALUES (6, '1234567891234505', 6);
 
 --mccs
-INSERT INTO public."mccs" ("id", "mcc_type", "mcc_code") VALUES (1, 'Products', 5411);
-INSERT INTO public."mccs" ("id", "mcc_type", "mcc_code") VALUES (2, 'Internet store', 5300);
-INSERT INTO public."mccs" ("id", "mcc_type", "mcc_code") VALUES (3, 'Electronic store', 5722);
-INSERT INTO public."mccs" ("id", "mcc_type", "mcc_code") VALUES (4, 'Cinema', 7832);
+INSERT INTO public."mccs" ("id", "type", "code") VALUES (1, 'Products', 5411);
+INSERT INTO public."mccs" ("id", "type", "code") VALUES (2, 'Internet store', 5300);
+INSERT INTO public."mccs" ("id", "type", "code") VALUES (3, 'Electronic store', 5722);
+INSERT INTO public."mccs" ("id", "type", "code") VALUES (4, 'Cinema', 7832);
 
 --merchants
 --products
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (1, 'Pyatorochka', 1, 'Russia', 'Balashikha', 'Kosinskoe Highway, 6, New Pavlino microdistrict');
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (2, 'Magnit', 1, 'Russia', 'Balashikha', 'Kosinskoe Highway, 10, New Pavlino microdistrict');
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (3, 'Lenta', 1, 'Russia', 'Balashikha', 'Prigorodnaya Street, c90, Savvino microdistrict');
 --online_stores
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (4, 'Ozon', 2, 'Russia', 'Balashikha', 'Boyarinov Street, 9, New Pavlino microdistrict');
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (5, 'Wildberries', 2, 'Russia', 'Balashikha', 'Kosinskoe Highway, 5/7, New Pavlino microdistrict');
 --electronics_stores
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (6, 'DNS', 3, 'Russia', 'Moscow', 'Generala Kuznetsova Street, 22');
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (7, 'M.Video', 3, 'Russia', 'Lyubertsy', 'October Avenue, 112');
 --cinema
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (8, 'Pyat zvezd', 4, 'Russia', 'Moscow', 'Bolshoy Ovchinnikovsky lane, 16');
-INSERT INTO public."merchants" ("id", "merchant_name", "mcc_id", "merchant_country", "merchant_city", "merchant_address")
+INSERT INTO public."merchants" ("id", "name", "mcc_id", "country", "city", "address")
 VALUES (9, 'KARO 10', 4, 'Russia', 'Reutov', 'Nosovikhinskoe Highway, 45');
 
 --transactions

@@ -14,8 +14,8 @@ def get_transactions(session, client_id: int, account_id: int = None, card_id: i
     transactions = transactions.filter(card.Card.id == card_id) if card_id else transactions
     transactions = transactions.filter(date(2022, month, 1) <= transaction.Transaction.datetime,
                                        transaction.Transaction.datetime <= timedelta(days=1)) if month else transactions
-    transactions = transactions.filter(mcc.Mcc.mcc_type == mcc_type) if mcc_type else transactions
-    transactions = transactions.filter(merchant.Merchant.merchant_city == city) if city else transactions
+    transactions = transactions.filter(mcc.Mcc.type == mcc_type) if mcc_type else transactions
+    transactions = transactions.filter(merchant.Merchant.city == city) if city else transactions
     transactions = transactions.filter(
-        merchant.Merchant.merchant_name == merchant_name) if merchant_name else transactions
+        merchant.Merchant.name == merchant_name) if merchant_name else transactions
     return list(transactions)

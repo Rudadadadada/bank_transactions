@@ -41,6 +41,7 @@ async def user_messages(message):
 
 @bot.callback_query_handler(func=lambda call: call.data == 'start')
 async def start(call):
+    await bot.answer_callback_query(call.id, "You are in start menu!")
     await bot.edit_message_text("""Welcome to the Bank Transactions Bot!\nMade by @Rudadadadada & @rekhlov""",
                                 call.message.chat.id,
                                 call.message.message_id,

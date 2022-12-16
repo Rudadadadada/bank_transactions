@@ -1,4 +1,4 @@
---Debugging data to filee the database.
+--Debugging data to fill the database.
 
 DELETE FROM public."transactions";
 DELETE FROM public."merchants";

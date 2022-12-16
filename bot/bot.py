@@ -1,6 +1,7 @@
 from telebot.async_telebot import AsyncTeleBot
 import asyncio
 from bot_utils import get_clients_as_dict, get_sent_messages, add_sent_message, COLUMNS_STR
+from data.transaсtion_filter import get_transactions
 from telebot.util import quick_markup
 from data.account import Account
 from data.card import Card
@@ -75,13 +76,14 @@ async def get_client_transactions(call):
     client = session.query(Client).filter(Client.id == client_id).first()
     await bot.answer_callback_query(call.id, f'Getting client {client.name} transactions...')
     await asyncio.sleep(1)
-    transactions_str = COLUMNS_STR + \
-                       client.get_transactions_as_str()
+    transactions = get_transactions(session, client_id)
+    transactions_str = COLUMNS_STR + '\n'.join([str(transaction) for transaction in transactions])
     await bot.edit_message_text(transactions_str, call.message.chat.id, call.message.message_id,
                                 reply_markup=quick_markup({'Back': {'callback_data': f'client_{client_id}'}}))
 
 
-@bot.callback_query_handler(func=lambda call: call.data.startswith('account_'))
+@bot.callback_query_handler(
+    func=lambda call: call.data.startswith('account_') and not call.data.endswith('_transactions'))
 async def get_account(call):
     account_id = int(call.data.split('_')[1])
     account = session.query(Account).filter(Account.id == account_id).first()
@@ -100,10 +102,22 @@ async def get_account_transactions(call):
     account = session.query(Account).filter(Account.id == account_id).first()
     await bot.answer_callback_query(call.id, f'Getting account {account.name} transactions...')
     await asyncio.sleep(1)
-    transactions_str = COLUMNS_STR + \
-                       account.get_transactions_as_str()
+    transactions = get_transactions(session, client_id=account.client_id, account_id=account_id)
+    transactions_str = COLUMNS_STR + '\n'.join([str(transaction) for transaction in transactions])
     await bot.edit_message_text(transactions_str, call.message.chat.id, call.message.message_id,
                                 reply_markup=quick_markup({'Back': {'callback_data': f'account_{account_id}'}}))
+
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith('card_') and not call.data.endswith('_transactions'))
+async def get_card_transactions(call):
+    card_id = int(call.data.split('_')[1])
+    card = session.query(Card).filter(Card.id == card_id).first()
+    await bot.answer_callback_query(call.id, f'Getting card {card.number} transactions...')
+    await asyncio.sleep(1)
+    transactions = get_transactions(session, client_id=card.account.client_id, card_id=card_id)
+    transactions_str = COLUMNS_STR + '\n'.join([str(transaction) for transaction in transactions])
+    await bot.edit_message_text(transactions_str, call.message.chat.id, call.message.message_id,
+                                reply_markup=quick_markup({'Back': {'callback_data': f'account_{card.account_id}'}}))
 
 
 asyncio.run(bot.polling())

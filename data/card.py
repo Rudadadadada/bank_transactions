@@ -11,3 +11,10 @@ class Card(Base, SerializerMixin):
 
     account = orm.relation('Account')
     transactions = orm.relation('Transaction', back_populates='card')
+
+    def get_transactions_as_str(self):
+        transactions_str = ''
+        for transaction in self.transactions:
+            transactions_str += str(transaction) + '\n'
+
+        return transactions_str

@@ -11,3 +11,17 @@ class Account(Base, SerializerMixin):
 
     client = orm.relation('Client')
     cards = orm.relation('Card', back_populates='account')
+
+    def get_cards_as_dict(self):
+        cards_dict = {}
+        for card in self.cards:
+            cards_dict[card.card_number] = {'callback_data': f'card_{card.id}'}
+
+        return cards_dict
+
+    def get_transactions_as_str(self):
+        transactions_str = ''
+        for card in self.cards:
+            transactions_str += card.get_transactions_as_str()
+
+        return transactions_str

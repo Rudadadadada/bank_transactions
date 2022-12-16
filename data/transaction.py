@@ -15,4 +15,4 @@ class Transaction(Base, SerializerMixin):
     merchant = orm.relation('Merchant')
 
     def __str__(self):
-        return f'{self.datetime} {self.card.card_number} {self.amount}₽   {self.merchant.merchant_name}'
+        return f'{self.datetime} {self.card.card_number} {self.amount}₽   {self.merchant.name}'

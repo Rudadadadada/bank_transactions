@@ -19,7 +19,7 @@ class Account(Base, SerializerMixin):
     def get_cards_as_dict(self):
         cards_dict = {}
         for card in self.cards:
-            cards_dict[card.card_number] = {'callback_data': f'card_{card.id}'}
+            cards_dict[card.number] = {'callback_data': f'card_{card.id}'}
 
         return cards_dict
 

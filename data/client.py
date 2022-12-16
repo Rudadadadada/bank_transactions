@@ -14,16 +14,10 @@ class Client(Base, SerializerMixin):
     # Relation between Client and Account. Many accounts to one client.
     accounts = orm.relation('Account', back_populates='client')
 
+    # Get all accounts of client as dict.
     def get_accounts_as_dict(self):
         accounts_dict = {}
         for account in self.accounts:
             accounts_dict[account.name] = {'callback_data': f'account_{account.id}'}
 
         return accounts_dict
-
-    def get_transactions_as_str(self):
-        transactions_str = ''
-        for account in self.accounts:
-            transactions_str += account.get_transactions_as_str()
-
-        return transactions_str

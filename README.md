@@ -2,8 +2,8 @@
 
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3.11-brightgreen"></a>
 <a href="https://postgresql.org"><img src="https://img.shields.io/badge/Powered%20by-PostgreSQL-blue.svg"/></a>
-<a href="https://pypi.org/project/pyTelegramBotAPI/"><img src="https://img.shields.io/badge/Powered%20by-telebot-blue"></a>
 <a href="https://www.sqlalchemy.org/"><img src="https://img.shields.io/badge/Powered%20by-SQLAlchemy-red"></a>
+<a href="https://pypi.org/project/pyTelegramBotAPI/"><img src="https://img.shields.io/badge/Powered%20by-telebot-blue"></a>
 
 ## ✒ Project description
 

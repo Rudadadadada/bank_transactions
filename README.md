@@ -15,7 +15,7 @@
 
 ![video of working](https://user-images.githubusercontent.com/57627872/210226228-2594a53a-e7e9-40ce-b33e-dac2fbb0e702.gif)
 
-## ❗️Assamption
+## ❗️Assumption
 
 - Assume that ***you are the administrator of the bank***, all transactions for all customers on all accounts and on all cards are available to you. 
 

@@ -31,7 +31,7 @@ The chat consists of buttons, each of which is a parameter for filtering.
 
 ### 2️⃣ Filter
 
-The main filter consists of 4 sub-filters by: product category, month, store, city.
+The main filter consists of 4 sub-filters by: product category, month, store name, city.
 
 ## 🛠️ Tools
 - <a href="https://www.postgresql.org/">Database PostgreSQL <img src="https://user-images.githubusercontent.com/57627872/213761059-d18cd77b-29b9-4e20-8f14-3efb384594de.png" height="20" width="20"></a>

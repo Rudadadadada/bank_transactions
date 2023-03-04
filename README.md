@@ -21,7 +21,7 @@
 
 - There is no full-fledged authorization in the project, since the newly registered users do not have completed transactions.
 
-- ***This project just emulates the work of the "Spending" service in the Tinkoff application.***
+- ***This project just emulates the work of the "Spending" service in the Tinkoff or "Expenses" in Sberbank application.***
 
 ## 🧩 Functionality
 
